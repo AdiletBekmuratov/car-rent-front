@@ -5,50 +5,19 @@ export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <>
-      <nav className="flex flex-wrap items-center justify-between px-2 py-3 bg-white mb-3 sticky shadow">
-        <div className="container px-5 mx-auto flex flex-wrap items-center justify-between">
-          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <a
-              className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-black"
-              href="#pablo">
-              21 Leasing
-            </a>
-            <button
-              className="text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}>
-              <FaBars />
-            </button>
-          </div>
-          <div
-            className={'lg:flex flex-grow items-center' + (navbarOpen ? ' flex' : ' hidden')}
-            id="example-navbar-danger">
-            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              <li className="nav-item">
-                <a
-                  className="lg:px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#pablo">
-                  Share
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="lg:px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#pablo">
-                  Tweet
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="lg:px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-black hover:opacity-75"
-                  href="#pablo">
-                  Pin
-                </a>
-              </li>
-            </ul>
-          </div>
+      <header className="body-font sticky w-full left-0 top-0 filter backdrop-blur-sm bg-black/[0.05] z-50 text-white">
+        <div className=" mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a className="flex title-font font-bold items-center  mb-4 md:mb-0">
+            <span className="ml-3 text-3xl uppercase">Caroro</span>
+          </a>
+          <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-xl justify-center uppercase ">
+            <a className="mr-5 hover:text-gray-900">Каталог</a>
+            <a className="mr-5 hover:text-gray-900">Условия</a>
+            <a className="mr-5 hover:text-gray-900">Контакты</a>
+          </nav>
+          <div className="text-2xl font-medium">+7 777 777 77 77</div>
         </div>
-      </nav>
+      </header>
     </>
   );
 }

@@ -1,18 +1,16 @@
 import Navbar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
-import { BrowserRouter as Router, Routes } from 'react-router-dom';
+import Home from '@/pages/Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const AppRoutes = () => {
   return (
     <Router>
-      <div className="flex flex-col justify-start overflow-x-hidden min-h-screen">
-        <Navbar />
-        <div className="flex-grow flex flex-col">
-          <ScrollToTop>
-            <Routes></Routes>
-          </ScrollToTop>
-        </div>
-      </div>
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </ScrollToTop>
     </Router>
   );
 };

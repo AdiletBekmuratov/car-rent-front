@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+	.layout {
+		@apply px-5 mx-auto
+	}
+}
+
+
+
 .spinner-svg {
 	width: 100%;
 	max-width: 10rem;
@@ -41,4 +49,21 @@
 	to {
 		transform: rotate(-1turn);
 	}
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+	
+	background-color: rgb(17 24 39);
+}
+
+::-webkit-scrollbar-thumb {
+	
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #6d6d6d; 
 }
