@@ -1,5 +1,7 @@
+import AppRoutes from './routes/AppRoutes';
+
 function App() {
-  return <div className="h-screen flex items-center justify-center">Hello</div>;
+  return <AppRoutes />;
 }
 
 export default App;
