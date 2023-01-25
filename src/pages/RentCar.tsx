@@ -1,4 +1,5 @@
 // import detail_image from '/images/detail_image.png';
+import { motion } from 'framer-motion';
 
 const RentCar = () => {
   return (
@@ -6,9 +7,15 @@ const RentCar = () => {
       <div className="relative mx-auto max-w-screen-xl px-4 py-8">
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
-            {/* <img className="w-full" src={detail_image} />
+            <motion.img
+              layoutId="1"
+              className="w-full"
+              src={
+                'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1583&q=80'
+              }
+            />
 
-            <div className="grid grid-cols-2 gap-4 lg:mt-4">
+            {/* <div className="grid grid-cols-2 gap-4 lg:mt-4">
               <img className="w-full" src={detail_image} />
 
               <img className="w-full" src={detail_image} />

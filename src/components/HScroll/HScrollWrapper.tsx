@@ -6,31 +6,32 @@ gsap.registerPlugin(ScrollTrigger);
 const HScrollWrapper = () => {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.set('.massiveImage', {
-        backgroundImage: `url(https://source.unsplash.com/random/${innerWidth * 3}x${innerHeight})`
-      });
+      let sections = gsap.utils.toArray(".panel");
 
-      gsap.to('.massiveImage', {
-        xPercent: -100,
-        x: () => innerWidth,
-        ease: 'none',
+      gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: "none",
         scrollTrigger: {
-          trigger: '.massiveImage',
-          start: 'top top',
-          end: () => innerWidth * 3,
-          scrub: true,
+          trigger: ".container-scroll",
           pin: true,
-          invalidateOnRefresh: true,
-          anticipatePin: 1
+          scrub: 1,
+          snap: 1 / (sections.length - 1),
+          end: () => "+=" + document.querySelector(".container-scroll").offsetWidth
         }
       });
-    });
-
+    })
     return () => {
       ctx.revert();
     };
   }, []);
-  return <div className="massiveImage"></div>;
+  return (
+    
+    <div className="container-scroll">
+      <div className="panel bg-blue-500 flex flex-1 w-full h-full items-center justify-center">ONEONE</div>
+      <div className="panel bg-green-500 flex flex-1 w-full h-full items-center justify-center">TWOWEO</div>
+      <div className="panel bg-red-500 flex flex-1  w-full h-full items-center justify-center">UWWWWWWWWW</div>
+    </div>
+  );
 };
 
 export default HScrollWrapper;
