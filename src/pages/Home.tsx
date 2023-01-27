@@ -77,7 +77,9 @@ const Home = () => {
         <Logo3dWrapper />
       </div> */}
       <div className="layout my-16">
-        <div className="flex justify-between border border-white/50 rounded-3xl">
+        <div
+          className="flex justify-between border border-white/50 rounded-3xl"
+          data-cursor="medium">
           <button
             onClick={() => setFilterOption('1')}
             className="flex items-center justify-center text-2xl flex-1 border-r border-white/50 py-6 hover:bg-white/80 hover:text-gray-900 hover:font-bold rounded-l-3xl transition-all">

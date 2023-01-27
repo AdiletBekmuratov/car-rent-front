@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  * {
+    cursor: none !important
+  }
+
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  .container-scroll {
+    width: 300%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .panel {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .layout {
+    perspective: 3000px;
+    @apply px-5 mx-auto;
+  }
+
+  .card-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+
+    background-image: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+  }
+}
+
+.spinner-svg {
+  width: 100%;
+  max-width: 10rem;
+  animation: rotate 3.4s linear infinite;
+}
+
+.spinner-circle {
+  fill: none;
+  stroke: slateblue;
+  stroke-width: 8px;
+  stroke-dasharray: 300;
+  animation: outline 2s cubic-bezier(0.77, 0, 0.18, 1) infinite;
+}
+
+@keyframes outline {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  5% {
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dashoffset: 300;
+  }
+
+  95% {
+    stroke-dashoffset: 600;
+  }
+
+  100% {
+    stroke-dashoffset: 600;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(-1turn);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(17 24 39);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #6d6d6d;
+}
+
+// Cursor
+.main-cursor,
+.secondary-cursor {
+  z-index: 10000;
+
+  pointer-events: none;
+  // overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+}
+
+.main-cursor {
+  transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1);
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  mix-blend-mode: difference;
+
+  .main-cursor-background {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+  }
+}
+
+.secondary-cursor {
+  width: 60px;
+  height: 60px;
+
+  .cursor-background {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    position: relative;
+
+    &:after,
+    &:before {
+      content: "";
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: white;
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+    }
+
+    &:before {
+      left: 10px;
+    }
+
+    &:after {
+      right: 10px;
+    }
+  }
+}
+
+.slider-drag {
+  .cursor-background {
+    animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+      bgUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+
+    &:after {
+      animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+        translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+    }
+
+    &:before {
+      animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+        translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+    }
+  }
+
+  .main-cursor {
+    animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bgUp {
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: black;
+  }
+}
+
+@keyframes bgDown {
+  from {
+    background-color: black;
+  }
+
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes clickScaleDown {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes translateLeftDot {
+  from {
+    transform: translate(20px, -50%);
+  }
+
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+
+@keyframes translateRightDot {
+  from {
+    transform: translate(-20px, -50%);
+  }
+
+  to {
+    transform: translate(0px, -50%);
+  }
+}

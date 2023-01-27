@@ -1,5 +1,5 @@
 import React from 'react';
-import {RiInstagramFill,RiTelegramFill, RiWhatsappFill } from 'react-icons/ri'
+import { RiInstagramFill, RiTelegramFill, RiWhatsappFill } from 'react-icons/ri';
 
 export const Footer = () => {
   return (
@@ -9,17 +9,17 @@ export const Footer = () => {
           <span className="ml-3 text-3xl uppercase">Caroro</span>
         </a>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-xl justify-center uppercase ">
-        © 2023 Copyright: Caroro
+          © 2023 Copyright: Caroro
         </nav>
         <div className="flex justify-center text-2xl ">
           <a href="#!" className="mr-6 hover:text-gray-600">
-            <RiTelegramFill/>
+            <RiTelegramFill />
           </a>
           <a href="#!" className="mr-6 hover:text-gray-600">
-            <RiInstagramFill/>
+            <RiInstagramFill />
           </a>
           <a href="#!" className="mr-6 hover:text-gray-600">
-            <RiWhatsappFill/>
+            <RiWhatsappFill />
           </a>
         </div>
       </div>

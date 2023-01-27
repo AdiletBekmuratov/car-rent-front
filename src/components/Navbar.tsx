@@ -34,9 +34,15 @@ export default function Navbar() {
             <span className="ml-3 text-3xl uppercase">Caroro</span>
           </a>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-xl justify-center uppercase ">
-            <a className="mr-5 hover:text-gray-900">Каталог</a>
-            <a className="mr-5 hover:text-gray-900">Условия</a>
-            <a className="mr-5 hover:text-gray-900">Контакты</a>
+            <a className="mr-5" data-cursor="small">
+              Каталог
+            </a>
+            <a className="mr-5" data-cursor="small">
+              Условия
+            </a>
+            <a className="mr-5" data-cursor="small">
+              Контакты
+            </a>
           </nav>
           <div className="text-2xl font-medium">+7 777 777 77 77</div>
         </div>
