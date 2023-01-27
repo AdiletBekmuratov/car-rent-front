@@ -1,7 +1,7 @@
 import React from 'react';
 import { RiInstagramFill, RiTelegramFill, RiWhatsappFill } from 'react-icons/ri';
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="body-font sticky w-full left-0 top-0 filter backdrop-blur-sm bg-black/[0.05] z-50 text-white">
       <div className=" mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -26,3 +26,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

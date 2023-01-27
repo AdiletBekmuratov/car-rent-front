@@ -1,6 +1,6 @@
 import { AccordionTab, AccordionWrapper } from '@/components/Accordion';
 import Card from '@/components/Card';
-import { Footer } from '@/components/Footer';
+import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { AnimatePresence } from 'framer-motion';
 import { useMemo, useState } from 'react';

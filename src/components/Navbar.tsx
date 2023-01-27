@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect } from 'react';
+import MagnetButton from './MagnetButton';
 
 export default function Navbar() {
   useLayoutEffect(() => {
@@ -28,23 +29,26 @@ export default function Navbar() {
   }, []);
   return (
     <>
-      <header className="header body-font sticky w-full left-0 top-0 filter backdrop-blur-sm bg-black/[0.05] z-50 text-white">
-        <div className=" mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a className="flex title-font font-bold items-center  mb-4 md:mb-0">
-            <span className="ml-3 text-3xl uppercase">Caroro</span>
+      <header className="header sticky w-full left-0 top-0 filter backdrop-blur-sm bg-black/[0.05] z-50 text-white">
+        <div className="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a className="flex font-bold items-center mb-4 md:mb-0 md:w-1/5">
+            <span className="text-3xl uppercase">Caroro</span>
           </a>
-          <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-xl justify-center uppercase ">
-            <a className="mr-5" data-cursor="small">
-              Каталог
-            </a>
-            <a className="mr-5" data-cursor="small">
-              Условия
-            </a>
-            <a className="mr-5" data-cursor="small">
-              Контакты
-            </a>
+          <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-xl justify-center uppercase md:w-3/5">
+            <MagnetButton className="mr-5" data-cursor="small">
+              <a>Каталог</a>
+            </MagnetButton>
+            <MagnetButton className="mr-5" data-cursor="small">
+              <a>Условия</a>
+            </MagnetButton>
+
+            <MagnetButton data-cursor="small">
+              <a>Контакты</a>
+            </MagnetButton>
           </nav>
-          <div className="text-2xl font-medium">+7 777 777 77 77</div>
+          <div className="inline-flex text-2xl font-medium mt-4 md:mt-0 justify-end items-center md:w-1/5">
+            +7 777 777 77 77
+          </div>
         </div>
       </header>
     </>
