@@ -64,6 +64,7 @@ const Home = () => {
     () => data.filter((item) => item.class === filterOption),
     [filterOption]
   );
+
   return (
     <main className="bg-gray-900 text-white">
       <Navbar />

@@ -52,13 +52,9 @@ const Card: FC<ICardProps> = ({ image }) => {
       layout>
       <img
         src={image}
-        alt=""
+        alt={image}
         className={`group-hover:scale-110 transition-all duration-500 absolute w-full h-full  block overflow-hidden rounded-xl`}
       />
-      {/* <div
-        className={`group-hover:scale-110 transition-all duration-500 absolute w-full h-full  block overflow-hidden rounded-xl 
-      bg-[url(${image})] 
-      bg-cover bg-center bg-no-repeat`}></div> */}
       <span className="absolute right-4 top-4 z-10 inline-flex items-center rounded-full bg-black px-3 py-1 text-xs font-semibold text-white">
         4.5
         <FaStar className="ml-1.5 h-3 w-3 text-yellow-300" />
