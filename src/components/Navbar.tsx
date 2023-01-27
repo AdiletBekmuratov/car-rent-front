@@ -1,11 +1,34 @@
-import { useState } from 'react';
-import { FaBars } from 'react-icons/fa';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLayoutEffect } from 'react';
 
 export default function Navbar() {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const showAnim = gsap
+        .from('.header', {
+          yPercent: -100,
+          paused: true,
+          duration: 0.2
+        })
+        .progress(1);
+
+      ScrollTrigger.create({
+        start: 'top top',
+        end: 99999,
+        onUpdate: (self) => {
+          self.direction === -1 ? showAnim.play() : showAnim.reverse();
+        }
+      });
+    });
+
+    return () => {
+      ctx.revert();
+    };
+  }, []);
   return (
     <>
-      <header className="body-font sticky w-full left-0 top-0 filter backdrop-blur-sm bg-black/[0.05] z-50 text-white">
+      <header className="header body-font sticky w-full left-0 top-0 filter backdrop-blur-sm bg-black/[0.05] z-50 text-white">
         <div className=" mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a className="flex title-font font-bold items-center  mb-4 md:mb-0">
             <span className="ml-3 text-3xl uppercase">Caroro</span>
