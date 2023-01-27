@@ -1,52 +1,60 @@
 import { AccordionTab, AccordionWrapper } from '@/components/Accordion';
 import Card from '@/components/Card';
 import { Footer } from '@/components/Footer';
-import HScrollWrapper from '@/components/HScroll/HScrollWrapper';
-import Logo3dWrapper from '@/components/Models/Logo3dWrapper';
 import Navbar from '@/components/Navbar';
-import { useMemo, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { useMemo, useState } from 'react';
 
 const data = [
   {
     id: 1,
-    class: '1'
+    class: '1',
+    image: 'https://picsum.photos/500/1000?random=1'
   },
   {
     id: 2,
-    class: '2'
+    class: '2',
+    image: 'https://picsum.photos/500/1000?random=2'
   },
   {
     id: 3,
-    class: '3'
+    class: '3',
+    image: 'https://picsum.photos/500/1000?random=3'
   },
   {
     id: 1,
-    class: '1'
+    class: '1',
+    image: 'https://picsum.photos/500/1000?random=4'
   },
   {
     id: 3,
-    class: '3'
+    class: '3',
+    image: 'https://picsum.photos/500/1000?random=5'
   },
   {
     id: 3,
-    class: '3'
+    class: '3',
+    image: 'https://picsum.photos/500/1000?random=6'
   },
   {
     id: 3,
-    class: '3'
+    class: '3',
+    image: 'https://picsum.photos/500/1000?random=7'
   },
   {
     id: 3,
-    class: '3'
+    class: '3',
+    image: 'https://picsum.photos/500/1000?random=8'
   },
   {
     id: 3,
-    class: '3'
+    class: '3',
+    image: 'https://picsum.photos/500/1000?random=9'
   },
   {
     id: 3,
-    class: '3'
+    class: '3',
+    image: 'https://picsum.photos/500/1000?random=10'
   }
 ];
 
@@ -94,9 +102,9 @@ const Home = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-4 mt-12">
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {filteredData.map((item, index) => (
-              <Card key={index} layoutId={item.id.toString()} />
+              <Card key={index} image={item.image} />
             ))}
           </AnimatePresence>
         </div>

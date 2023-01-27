@@ -1,10 +1,9 @@
-import { FaStar } from 'react-icons/fa';
-import { motion, Variants, AnimatePresence } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
 
 interface ICardProps {
-  layoutId: string;
+  image: string;
 }
 
 const animation: Variants = {
@@ -41,20 +40,25 @@ const fadeAnimation: Variants = {
   }
 };
 
-const Card: FC<ICardProps> = ({ layoutId }) => {
+const Card: FC<ICardProps> = ({ image }) => {
   return (
     <motion.div
       variants={fadeAnimation}
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={{ duration: 1 }}
-      className="h-80 relative overflow-hidden group rounded-2xl w-full cursor-pointer"
+      transition={{ duration: 0.3 }}
+      className="h-96 relative overflow-hidden group rounded-2xl w-full cursor-pointer"
       layout>
-      <div
-        className="group-hover:scale-110 transition-all duration-500 absolute w-full h-full  block overflow-hidden rounded-xl 
-      bg-[url(https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1583&q=80)] 
-      bg-cover bg-center bg-no-repeat"></div>
+      <img
+        src={image}
+        alt=""
+        className={`group-hover:scale-110 transition-all duration-500 absolute w-full h-full  block overflow-hidden rounded-xl`}
+      />
+      {/* <div
+        className={`group-hover:scale-110 transition-all duration-500 absolute w-full h-full  block overflow-hidden rounded-xl 
+      bg-[url(${image})] 
+      bg-cover bg-center bg-no-repeat`}></div> */}
       <span className="absolute right-4 top-4 z-10 inline-flex items-center rounded-full bg-black px-3 py-1 text-xs font-semibold text-white">
         4.5
         <FaStar className="ml-1.5 h-3 w-3 text-yellow-300" />
