@@ -34,8 +34,23 @@ const Cursor = () => {
     key: -1
   });
 
+  const hide = () => {
+    innerControls.start({
+      opacity: 0
+    });
+    outerControls.start({ opacity: 0 });
+  };
+
+  const show = () => {
+    innerControls.start({
+      opacity: 1
+    });
+    outerControls.start({ opacity: 1 });
+  };
+
   const onMouseDown = async () => {
-    await outerBgControls.start({
+    outerBgControls.start({
+      opacity: 0,
       scale: 0,
       transition: {
         duration: 0.3
@@ -48,7 +63,8 @@ const Cursor = () => {
   };
 
   const onMouseUp = async () => {
-    await outerBgControls.start({
+    outerBgControls.start({
+      opacity: 1,
       scale: 1,
       transition: {
         duration: 0.3
@@ -108,6 +124,12 @@ const Cursor = () => {
   };
 
   useEffect(() => {
+    let hideLinks = document.querySelectorAll('[data-cursor-hide]');
+    hideLinks.forEach((item) => {
+      item.addEventListener('mouseenter', hide);
+      item.addEventListener('mouseleave', show);
+    });
+
     let smallLinks = document.querySelectorAll('[data-cursor="small"]');
     smallLinks.forEach((item) => {
       item.addEventListener('mouseenter', () => onMouseEnterLink(3));
@@ -132,6 +154,10 @@ const Cursor = () => {
     document.addEventListener('mouseleave', onMouseLeave);
 
     return () => {
+      hideLinks.forEach((item) => {
+        item.removeEventListener('mouseenter', hide);
+        item.removeEventListener('mouseleave', show);
+      });
       [...smallLinks, ...medLinks, ...hugeLinks].forEach((item) => {
         item.removeEventListener('mouseenter', () => onMouseEnterLink);
         item.removeEventListener('mouseleave', onMouseLeaveLink);
@@ -177,7 +203,7 @@ const Cursor = () => {
         <motion.div animate={innerBgControls} className="main-cursor-background"></motion.div>
       </motion.div>
       <motion.div animate={outerControls} className="secondary-cursor" ref={secondaryCursor}>
-        <motion.div animate={outerBgControls} className="cursor-background"></motion.div>
+        <motion.div animate={outerBgControls} className={`cursor-background`}></motion.div>
       </motion.div>
     </div>
   ) : (

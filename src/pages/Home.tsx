@@ -72,8 +72,8 @@ const Home = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi corporis incidunt,
         perspiciatis assumenda praesentium consequuntur nihil at, magni culpa vero dolorem ipsum
         exercitationem ratione, amet nostrum neque eum quia obcaecati?
-      </div>
-      <HScrollWrapper /> */}
+      </div> */}
+      {/* <HScrollWrapper /> */}
       {/* <div className="w-full h-screen bg-transparent" id="start">
         <Logo3dWrapper />
       </div> */}

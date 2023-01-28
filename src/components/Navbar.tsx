@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
 import MagnetButton from './MagnetButton';
 
 export default function Navbar() {
@@ -36,14 +37,14 @@ export default function Navbar() {
           </a>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-xl justify-center uppercase md:w-3/5">
             <MagnetButton className="mr-5" data-cursor="small">
-              <a>Каталог</a>
+              <Link to={'/#bruh'}>Каталог</Link>
             </MagnetButton>
             <MagnetButton className="mr-5" data-cursor="small">
-              <a>Условия</a>
+              <Link to="/#">Условия</Link>
             </MagnetButton>
 
             <MagnetButton data-cursor="small">
-              <a>Контакты</a>
+              <Link to="/#">Контакты</Link>
             </MagnetButton>
           </nav>
           <div className="inline-flex text-2xl font-medium mt-4 md:mt-0 justify-end items-center md:w-1/5">

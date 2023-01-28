@@ -1,5 +1,4 @@
-import { MouseEvent } from 'react';
-import { FC, HTMLAttributes, ReactNode, useRef } from 'react';
+import { FC, HTMLAttributes, MouseEvent, ReactNode, useRef } from 'react';
 
 const MagnetButton: FC<{ children: ReactNode } & HTMLAttributes<HTMLDivElement>> = ({
   children,
@@ -24,7 +23,7 @@ const MagnetButton: FC<{ children: ReactNode } & HTMLAttributes<HTMLDivElement>>
   return (
     <div
       {...rest}
-      className={`magnet transition-all duration-100 relative ${rest.className}`}
+      className={`magnet transition-all duration-100 relative flex items-center justify-center ${rest.className}`}
       // @ts-ignore
       onMouseMove={handleMouseMove}
       onMouseOut={handleMouseOut}
