@@ -1,4 +1,5 @@
 import Cursor from '@/components/Cursor/Cursor';
+import Spinner from '@/components/Spinner';
 import Home from '@/pages/Home';
 import TempCar from '@/pages/TempCar';
 import { AnimatePresence } from 'framer-motion';
@@ -9,6 +10,7 @@ const AppRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Cursor />
+      <Spinner />
       <Routes key={location.pathname} location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/car" element={<TempCar />} />

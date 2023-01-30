@@ -30,7 +30,7 @@ export default function Navbar() {
   }, []);
   return (
     <>
-      <header className="header sticky w-full left-0 top-0 filter backdrop-blur-sm bg-black/[0.05] z-50 text-white">
+      <header className="header sticky w-full left-0 top-0 filter backdrop-blur-sm bg-black/[0.05] z-40 text-white">
         <div className="mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a className="flex font-bold items-center mb-4 md:mb-0 md:w-1/5">
             <span className="text-3xl uppercase">Caroro</span>
