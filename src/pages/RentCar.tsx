@@ -1,10 +1,12 @@
 // import detail_image from '/images/detail_image.png';
+import Navbar from '@/components/Navbar';
 import { motion } from 'framer-motion';
 
 const RentCar = () => {
   return (
-    <div>
-      <div className="relative mx-auto max-w-screen-xl px-4 py-8">
+    <main className='bg-gray-900' >
+      <Navbar/>
+      <div className="relative mx-auto max-w-screen-xl px-4 py-8 ">
         <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-1">
             <motion.img
@@ -26,12 +28,12 @@ const RentCar = () => {
             </div> */}
           </div>
 
-          <div className="sticky top-0">
-            <strong className="rounded-full border border-blue-600 bg-gray-100 px-3 py-0.5 text-xs font-medium tracking-wide text-blue-600">
+          <div className="sticky top-0 text-white">
+            {/* <strong className="rounded-full border border-blue-600 bg-gray-100 px-3 py-0.5 text-xs font-medium tracking-wide text-blue-600">
               Pre Order
-            </strong>
+            </strong> */}
 
-            <div className="mt-8 flex justify-between">
+            <div className="flex justify-between">
               <div className="max-w-[35ch]">
                 <h1 className="text-2xl font-bold">Mercedes-Benz E63s 2022</h1>
 
@@ -206,8 +208,8 @@ const RentCar = () => {
             </div>
           </div>
         </div>
-        <h2 className="mt-8">Характеристики</h2>
-        <div className="mt-8 grid grid-cols-2 gap-4">
+        <h2 className="mt-8 text-white">Характеристики</h2>
+        <div className="mt-8 grid grid-cols-2 gap-4 text-white">
           <div>Марка </div>
           <div>Kia</div>
           <div>Модель</div>
@@ -238,7 +240,7 @@ const RentCar = () => {
           <div>5</div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
