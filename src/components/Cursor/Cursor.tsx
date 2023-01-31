@@ -13,7 +13,7 @@ const Cursor = () => {
   const outerControls = useAnimationControls();
   const outerBgControls = useAnimationControls();
 
-  const [type, setType] = useState<CursorLookType>('default');
+  const [type, setType] = useState<CursorLookType>('hidden');
   const secondaryCursor = useRef<HTMLDivElement>(null);
   const mainCursor = useRef<HTMLDivElement>(null);
   const positionRef = useRef({
@@ -108,11 +108,13 @@ const Cursor = () => {
     const mouseX = clientX;
     const mouseY = clientY;
 
-    positionRef.current.mouseX = mouseX - secondaryCursor.current!.clientWidth / 2;
-    positionRef.current.mouseY = mouseY - secondaryCursor.current!.clientHeight / 2;
-    mainCursor.current!.style.transform = `translate3d(${
-      mouseX - mainCursor.current!.clientWidth / 2
-    }px, ${mouseY - mainCursor.current!.clientHeight / 2}px, 0)`;
+    if (secondaryCursor.current && mainCursor.current) {
+      positionRef.current.mouseX = mouseX - secondaryCursor.current!.clientWidth / 2;
+      positionRef.current.mouseY = mouseY - secondaryCursor.current!.clientHeight / 2;
+      mainCursor.current!.style.transform = `translate3d(${
+        mouseX - mainCursor.current!.clientWidth / 2
+      }px, ${mouseY - mainCursor.current!.clientHeight / 2}px, 0)`;
+    }
   };
 
   useEffect(() => {
@@ -184,7 +186,9 @@ const Cursor = () => {
           positionRef.current.destinationY += distanceY;
         }
       }
-      secondaryCursor.current!.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+      if (secondaryCursor.current) {
+        secondaryCursor.current!.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+      }
     };
     followMouse();
   }, []);

@@ -1,6 +1,7 @@
 import { AccordionTab, AccordionWrapper } from '@/components/Accordion';
 import Card from '@/components/Card';
 import Footer from '@/components/Footer';
+import LayeredSection from '@/components/LayeredSection';
 import Navbar from '@/components/Navbar';
 import { AnimatePresence } from 'framer-motion';
 import { useMemo, useState } from 'react';
@@ -68,6 +69,8 @@ const Home = () => {
   return (
     <main className="bg-gray-900 text-white">
       <Navbar />
+
+      <LayeredSection />
       {/* <div className="h-screen">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi corporis incidunt,
         perspiciatis assumenda praesentium consequuntur nihil at, magni culpa vero dolorem ipsum
@@ -83,28 +86,28 @@ const Home = () => {
           data-cursor="medium">
           <button
             onClick={() => setFilterOption('1')}
-            className="flex items-center justify-center text-2xl flex-1 border-r border-white/50 py-6 hover:bg-white/80 hover:text-gray-900 hover:font-bold rounded-l-3xl transition-all">
+            className="flex items-center justify-center md:text-2xl flex-1 border-r border-white/50 py-6 hover:bg-white/80 hover:text-gray-900 hover:font-bold rounded-l-3xl transition-all">
             ЭКОНОМ
           </button>
           <button
             onClick={() => setFilterOption('2')}
-            className="flex items-center justify-center text-2xl flex-1 border-r border-white/50 py-6 hover:bg-white/80 hover:text-gray-900 hover:font-bold transition-all">
+            className="flex items-center justify-center md:text-2xl flex-1 border-r border-white/50 py-6 hover:bg-white/80 hover:text-gray-900 hover:font-bold transition-all">
             КОМФОРТ
           </button>
           <button
             onClick={() => setFilterOption('3')}
-            className="flex items-center justify-center text-2xl flex-1 border-r border-white/50 py-6 hover:bg-white/80 hover:text-gray-900 hover:font-bold transition-all">
+            className="flex items-center justify-center md:text-2xl flex-1 border-r border-white/50 py-6 hover:bg-white/80 hover:text-gray-900 hover:font-bold transition-all">
             БИЗНЕС
           </button>
-          <button className="flex items-center justify-center text-2xl flex-1 border-r border-white/50 py-6 hover:bg-white/80 hover:text-gray-900 hover:font-bold transition-all">
+          <button className="flex items-center justify-center md:text-2xl flex-1 border-r border-white/50 py-6 hover:bg-white/80 hover:text-gray-900 hover:font-bold transition-all">
             ПРЕМИУМ
           </button>
-          <button className="flex items-center justify-center text-2xl flex-1 py-6  hover:bg-white/80 hover:text-gray-900 hover:font-bold rounded-r-3xl transition-all">
+          <button className="flex items-center justify-center md:text-2xl flex-1 py-6  hover:bg-white/80 hover:text-gray-900 hover:font-bold rounded-r-3xl transition-all">
             ВНЕДОРОЖНИКИ
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mt-12">
+        <div className="grid grid-cols-2 gap-16 mt-12">
           <AnimatePresence mode="wait">
             {filteredData.map((item, index) => (
               <Card key={index} image={item.image} />
