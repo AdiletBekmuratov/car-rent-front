@@ -33,18 +33,18 @@ const RentCar = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-2">
+        <div className="col-span-3 md:col-span-2">
           <img className="rounded-xl" src="/example.jpg"></img>
         </div>
       </div>
       <div className="layout grid grid-cols-3 gap-4 py-12 text-white">
-        <div className="col-span-2">
+        <div className="col-span-3 md:col-span-2">
           <img className="rounded-xl" src="/example.jpg"></img>
         </div>
 
-        <div className="col-span-1">
-          <div className="grid grid-cols-2">
-            <div className="text-left text-xl col-span-2">
+        <div className="col-span-3 md:col-span-1">
+          <div className="grid">
+            <div className="text-left text-xl col-span-3 md:col-span-2">
               Hyundai Accent — комфортабельный и надёжный автомобиль. Большая решётка радиатора,
               оригинальная оптика, уникальный дизайн литых колёсных дисков создают стильный
               экстерьер. Система безопасности Hyundai включает светодиоды, ABS, обеспечивающую
@@ -54,13 +54,11 @@ const RentCar = () => {
               багажник на 465 л. Автомобиль максимально адаптирован к Казахстанским условиям
               эксплуатации.
             </div>
-            <div className="col-span-1">
-              <div className="flex bg-white w-72 h-72 rounded-full mt-24">
+            <div className="flex flex-col md:flex-row space-x-2 mt-6">
+              <div className="flex bg-white w-72 h-72 rounded-full items-center justify-center">
                 <div className="text-black/95 text-xl font-bold  ">Забронировать машину</div>
               </div>
-            </div>
-            <div>
-              <div className="flex border w-72 h-72 rounded-full mt-24">
+              <div className="flex border w-72 h-72 rounded-full items-center justify-center">
                 <div className="text-white/95 text-xl font-bold text-center ">
                   Вернуться в каталог
                 </div>

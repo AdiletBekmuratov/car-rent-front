@@ -1,14 +1,6 @@
 import { motion, useAnimationControls } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-export type CursorLookType =
-  | 'default'
-  | 'slider-hover'
-  | 'slider-drag'
-  | 'text'
-  | 'link'
-  | 'hamburger'
-  | 'click'
-  | 'hidden';
+export type CursorLookType = 'default' | 'hidden';
 
 const transition = {
   type: 'spring'

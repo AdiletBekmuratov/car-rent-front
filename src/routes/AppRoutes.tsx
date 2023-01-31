@@ -1,7 +1,7 @@
 import Cursor from '@/components/Cursor/Cursor';
 import Spinner from '@/components/Spinner';
-import Example from '@/pages/Example';
 import Home from '@/pages/Home';
+import RentCar from '@/pages/RentCar';
 import { AnimatePresence } from 'framer-motion';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ const AppRoutes = () => {
       <Spinner />
       <Routes key={location.pathname} location={location}>
         <Route path="/" element={<Home />} />
-        <Route path="/car" element={<Example />} />
+        <Route path="/car" element={<RentCar />} />
       </Routes>
     </AnimatePresence>
   );
