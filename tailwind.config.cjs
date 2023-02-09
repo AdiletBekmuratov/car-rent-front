@@ -14,7 +14,8 @@ module.exports = {
         'grey-30': '#DDFFF1'
       },
       fontFamily: {
-        cabin: ['Cabin', 'sans-serif']
+        montserrat: ['Montserrat', 'sans-serif'],
+        arbil: ['Abril Fatface', 'cursive']
       }
     }
   },

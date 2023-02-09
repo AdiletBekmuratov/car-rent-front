@@ -28,32 +28,13 @@ const animation: Variants = {
   }
 };
 
-const fadeAnimation: Variants = {
-  initial: {
-    opacity: 0
-  },
-  animate: {
-    opacity: 1
-  },
-  exit: {
-    opacity: 0
-  }
-};
-
 const Card: FC<ICardProps> = ({ image }) => {
   return (
-    <motion.div
-      variants={fadeAnimation}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.3 }}
-      className="h-96 relative overflow-hidden group rounded-2xl w-full cursor-pointer"
-      layout>
+    <motion.div className="h-96 relative overflow-hidden group rounded-2xl w-full cursor-pointer">
       <img
         src={image}
         alt={image}
-        className={`group-hover:scale-110 transition-all duration-500 absolute w-full h-full  block overflow-hidden rounded-xl`}
+        className={`group-hover:scale-110 transition-all duration-500 absolute w-full h-full block overflow-hidden rounded-xl object-cover`}
       />
       <span className="absolute right-4 top-4 z-10 inline-flex items-center rounded-full bg-black px-3 py-1 text-xs font-semibold text-white">
         4.5

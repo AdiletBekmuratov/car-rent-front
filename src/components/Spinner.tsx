@@ -8,7 +8,7 @@ const Spinner = () => {
     timer = setTimeout(() => {
       document.body.style.overflow = 'visible';
       setLoading(false);
-    }, 3000);
+    }, 1500);
 
     return () => {
       clearTimeout(timer);
