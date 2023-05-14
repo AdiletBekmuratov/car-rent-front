@@ -14,15 +14,15 @@ export default function Navbar() {
             <span className="ml-2 text-xl md:text-3xl uppercase">Caroro</span>
           </Link>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base md:text-xl justify-center uppercase md:w-3/5">
-            <Link to="/#rules" className="mr-5" data-cursor="small">
+            <a href="/#rules" className="mr-5" data-cursor="small">
               Условия
-            </Link>
-            <Link to={'/#catalog'} className="mr-5" data-cursor="small">
+            </a>
+            <a href='/#catalog' className="mr-5" data-cursor="small">
               Каталог
-            </Link>
-            <Link to="/#support" data-cursor="small">
+            </a>
+            <a href="/#support" data-cursor="small">
               Контакты
-            </Link>
+            </a>
           </nav>
           <a
             href="tel:+77777777777"
