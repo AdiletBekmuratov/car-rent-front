@@ -72,7 +72,7 @@ const CarCollection = () => {
   };
 
   return (
-    <div className="layout my-16">
+    <div className="layout my-16" id="catalog">
       <h3 className="sm:text-6xl text-2xl font-light text-center text-white uppercase mb-12">
         Каталог автомобилей
       </h3>

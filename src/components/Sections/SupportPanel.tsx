@@ -3,7 +3,7 @@ import { FaNewspaper } from 'react-icons/fa';
 
 const SupportPanel = () => {
   return (
-    <section className="layout my-24">
+    <section className="layout my-24" id="support">
       <div className="block rounded-lg bg-gray-900">
         <div className="flex flex-wrap items-center">
           <div className="grow-0 shrink-0 basis-auto block w-full lg:flex lg:w-6/12 xl:w-4/12">

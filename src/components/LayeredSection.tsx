@@ -61,7 +61,7 @@ const LayeredSection = () => {
           </div>
         </div>
       </section>
-      <section className="text-white bg-gray-900 flex items-center justify-center relative">
+      <section className="text-white bg-gray-900 flex items-center justify-center relative" id="rules">
         <div className="layout py-24">
           <div className="flex flex-col text-center w-full mb-20">
             <h2 className="text-4xl tracking-widest font-bold mb-1 uppercase">Caroro</h2>
